@@ -14,10 +14,14 @@ Many more features are planned for its future.
 
 ###Custom Handlebars Helpers
 
-Alchemy uses several custom Handlebars helpers to make the theme more powerful. You'll need to add one line of code to the main `index.js` file to load these helpers and allow Alchemy to register them with Handlebars.
+Alchemy uses several custom Handlebars helpers to make the theme more powerful. You'll need to add one line of code to the main `config.js` file to load these helpers and allow Alchemy to register them with Handlebars.
+
+This is the only file that's loaded by Ghost that is currently safe from being overwritten during an upgrade, so we need to hook our helpers in here.
+
+In the future, I'll explore using the Plugin system or the Ghost API to take care of these, but for now, this is what I have to work with.
 
 1. Open `config.js`
-2. Add the following code, replacing `[ALCHEMY THEME DIRECTORY]` with the name of the folder that has your Alchemy theme files:
+2. Add the following code to your Ghost `config.js` just before the line that begins with:  `var path =`, replacing `[ALCHEMY THEME DIRECTORY]` with the name of the folder that has your Alchemy theme files:
 
     // Load custom Handlebars helpers from Alchemy Theme
     require('./content/themes/[ALCHEMY THEME DIRECTORY]/helpers')();
