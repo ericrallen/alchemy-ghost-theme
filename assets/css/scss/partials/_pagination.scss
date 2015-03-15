@@ -1,0 +1,17 @@
+
+    .pagination {
+        &-notice {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        &-newer {
+            margin-top: 10px;
+            float: left;
+        }
+
+        &-older {
+            margin-top: 10px;
+            float: right;
+        }
+    }

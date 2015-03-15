@@ -1,0 +1,66 @@
+
+    //setting theme variables that should be used in the scss files
+
+    //COLOR
+        //text colors
+        $body-copy-color: $black;
+        $page-heading-color: $black;
+        $page-heading-sub-color: $mid-gray;
+        $meta-item-color: $mid-gray;
+        $link-color: $blue;
+        $link-hover-color: $dev-gray;
+        $intro-copy-color: $mid-gray;
+        $item-title-color: $black;
+
+        //element colors
+        $page-header-divider-color: $red;
+        $hr-color: $dev-gray;
+        $border-color: $dev-gray;
+
+    //SIZE
+        //text sizes
+        $body-copy-size: 14px;
+        $page-header-size: 48px;
+        $page-header-sub-size: $body-copy-size;
+        $item-title-size: 18px;
+        $read-more-link-size: 12px;
+        $intro-copy-size: 12px;
+        $meta-item-size: 12px;
+
+        //line-heights
+        $body-copy-line-height: 1.7;
+        $page-header-line-height: 1.4;
+        $page-header-sub-line-height: 1.2;
+
+    //ALIGNMENT
+        //text alignment
+        $page-header-align: right;
+        $page-header-sub-align: $page-header-align;
+        $body-align: left;
+
+    //WEIGHT
+        //Lato:300,400,700
+        //Merriweather:400,400italic,700'
+        //font-weight
+        $page-header-weight: 700;
+        $page-header-sub-weight: 300;
+        $body-copy-weight: 400;
+        $body-copy-bold-weight: 700;
+        $body-copy-italic-weight: 400;
+        $item-title-header-weight: 700;
+        $meta-item-weight: 400;
+
+    //TYPEFACE
+        //font-family
+        $page-header-family: $merriweather;
+        $page-header-sub-family: $lato;
+        $body-copy-family: $merriweather;
+        $item-title-family: $lato;
+        $read-more-family: $lato;
+        $meta-item-copy: $merriweather;
+
+        //textr-transform
+        $page-header-sub-transform: uppercase;
+        $item-title-transform: uppercase;
+        $read-more-transform: uppercase;
+        $pagination-transform: lowercase;

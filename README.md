@@ -1,8 +1,8 @@
-#alchemy-ghost v0.1.0
+#alchemy-ghost v0.1.1
 
 **Alchemy is still very much a work in progress, it's not ready for use just yet and definitely doesn't deliver on all of its features yet.**
 
-Alchemy is a typographic Ghost theme that's built to be lean, modern, performant, forward-thinking, and beautiful.
+Alchemy is a typographic Ghost theme that's built to be lean, modern, performant, forward-thinking, responsive, and beautiful.
 
 Alchemy is optimized for developer blogs where code will be posted, but will work just as well for blogs featuring text and images instead of code.
 
@@ -15,6 +15,8 @@ Many more features are planned for its future.
 ###Custom Handlebars Helpers
 
 Alchemy uses several custom Handlebars helpers to make the theme more powerful. You'll need to add one line of code to the main `config.js` file to load these helpers and allow Alchemy to register them with Handlebars.
+
+These helpers let Alchemy perform a lot of magic behind the scenes.
 
 This is the only file that's loaded by Ghost that is currently safe from being overwritten during an upgrade, so we need to hook our helpers in here.
 
@@ -46,4 +48,4 @@ Alchemy has been built to be accessible to all users.
 
 ###SEO (in progress)
 
-I've partnered with an SEO specialist to make sure that the end result of Alchemy will maximize your SEO impact.
+AlchI've partnered with an SEO specialist to make sure that the end result of Alchemy will maximize your potential SEO impact.

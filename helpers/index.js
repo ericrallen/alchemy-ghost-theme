@@ -27,6 +27,10 @@ module.exports = function() {
         return false;
     }
 
+    function checkPostsList(context) {
+        if(context.indexOf('index') > -1) return true;
+    }
+
     //hbs custom function to check if we are on the homepage
     //we use this so that we can add rel="nofollow" to our footer Ghost and Alchemy links for SEO purposes  if this isn't the homepage
     hbs.registerHelper('alchemy-checkHomePage', function alchemyCheckHomePage(options) {
@@ -65,7 +69,7 @@ module.exports = function() {
         }
 
         var content = '<section class="blog-footer-poweredby">' +
-                            '   Proudly <a href="https://ghost.org"' + nofollow + '>published with Ghost</a> and <a href="https://github.com/ericrallen/alchemy-ghost-theme"' + nofollow + '>built with Alchemy</a>.' +
+                            '   <p>Proudly <a href="https://ghost.org"' + nofollow + '>published with Ghost</a>.</p><p>Proudly <a href="https://github.com/ericrallen/alchemy-ghost-theme"' + nofollow + '>built with Alchemy</a>.</p>' +
                             '</section>'
         ;
 
@@ -90,5 +94,56 @@ module.exports = function() {
 
     hbs.registerHelper('alchemy-syntaxHighlightingScript', function alchemySyntaxHighlightingScript(options) {
         if(typeof alchemy.syntax_highlighting && alchemy.syntax_highlighting) return new hbs.SafeString('<script src="/assets/vendor/highlight/highlight.pack.js"></script>');
+    });
+
+    hbs.registerHelper('alchemy-pageTitle', function alchemyPageTitle(blogTitle, metaTitle, options) {
+        var titleString;
+
+        var title = '';
+        var subTitle = '';
+        var sep = '|';
+        var showBlogTitle = alchemy.show_blow_name_in_title ? alchemy.show_blow_name_in_title : false;
+
+        if(showBlogTitle) {
+            subTitle = blogTitle;
+        }
+
+        if(typeof alchemy.title_separator !== 'undefined') {
+            if(alchemy.title_separator === '') {
+                sep = ' ';
+            } else if(alchemy.title_separator === ' ') {
+                sep = alchemy.title_separator;
+            } else {
+                sep = ' ' + alchemy.title_separator + ' ';
+            }
+        }
+
+        if(checkHomePage(options.data.root.context) || checkPostsList(options.data.root.context)) {
+            if(typeof alchemy.homepage_title !== 'undefined' && alchemy.homepage_title) {
+                title = alchemy.homepage_title;
+            } else if(typeof alchemy.sub_title !== 'undefined' && alchemy.sub_title) {
+                title = alchemy.sub_title;
+            } else {
+                title = blogTitle;
+                showBlogTitle = false;
+            }
+
+            titleString = title;
+
+            if(showBlogTitle && subTitle) {
+                titleString += sep + subTitle;
+            }
+
+            return new hbs.SafeString('<meta name="title" content="' + titleString + '" />' + "\n" + '<title>' + titleString + '</title>');
+
+        } else {
+            titleString = metaTitle;
+
+            if(showBlogTitle && subTitle) {
+                titleString += sep + subTitle;
+            }
+
+            return new hbs.SafeString('<meta name="title" content="' + titleString + '" />' + "\n" + '<title>' + titleString + '</title>');
+        }
     });
 };

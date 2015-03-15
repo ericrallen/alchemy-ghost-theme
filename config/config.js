@@ -2,15 +2,18 @@
 
 var alchemyConfig = {
     disqus_shortname: "",
-    github_user: "ericrallen",
+    github_user: "",
     google_analytics_id: "",
+    homepage_title: "",
     posted_by_text: "Written by",
     show_author_in_preview: true,
-    sub_title: "Transmuting the Web",
+    show_blow_name_in_title: true,
+    sub_title: "",
     syntax_highlighting: true,
     syntax_theme: 'github',
     syntax_theme_custom: false,
-    twitter_user: "allenericr",
+    title_separator: '|',
+    twitter_user: "",
     use_relative_date: true
 };
 

@@ -1,0 +1,50 @@
+
+    html {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        margin: auto;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        width: 90%;
+        height: 100%;
+        overflow-y: scroll; //force scroll bar so everything matches up regardless of page length
+        font-size: $body-copy-size;
+        line-height: $body-copy-line-height;
+        color: $body-copy-color;
+        font-family: $body-copy-family;
+        margin: 0 5%;
+        padding: 20px;
+        font-weight: $body-copy-weight;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: $hr-color;
+        margin: 30px auto;
+    }
+
+    a {
+        color: $link-color;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+            color: $link-hover-color;
+        }
+    }
+
+    .content-pagination {
+        margin: 30px auto;
+        color: $meta-item-color;
+        text-transform: lowercase;
+        font-size: $meta-item-size;
+    }

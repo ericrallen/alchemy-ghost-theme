@@ -1,0 +1,38 @@
+
+    //page header
+    .page-title {
+        &-main {
+            font-size: $page-header-size;
+            color: $page-heading-color;
+            text-align: $page-header-align;
+            line-height: $page-header-line-height;
+            font-weight: $page-header-weight;
+            font-family: $page-header-family;
+            margin: 0;
+        }
+
+        &-separator {
+            text-align: $page-header-align;
+            margin: 20px 0 30px;
+
+            &:before {
+                content: '';
+                display: block;
+                border-top: 5px solid $page-header-divider-color;
+                width: 35%;
+                position: relative;
+                left: 65%;
+            }
+        }
+
+        &-sub {
+            text-transform: $page-header-sub-transform;
+            font-size: $page-header-sub-size;
+            color: $page-heading-sub-color;
+            text-align: $page-header-sub-align;
+            line-height: $page-header-sub-line-height;
+            font-weight: $page-header-sub-weight;
+            font-family: $page-header-sub-family;
+            margin: 0;
+        }
+    }

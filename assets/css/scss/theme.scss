@@ -1,0 +1,16 @@
+
+    //normalize
+    @import 'vendor/_normalize.scss';
+
+    //alchemy configuration
+    @import 'config/_config.scss';
+
+    //section styles
+    @import 'partials/_general.scss';
+    @import 'partials/_header.scss';
+    @import 'partials/_intro.scss';
+    @import 'partials/_pagination.scss';
+    @import 'partials/_footer.scss';
+
+    //utility styles
+    @import 'partials/_utility.scss';
