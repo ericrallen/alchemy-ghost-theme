@@ -1,17 +1,6 @@
 {{#foreach posts}}
 
-    <article class="post-preview {{post_class}}">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        </header>
-        <div class="post-excerpt">
-            <p>{{excerpt words="30"}}</p>
-        </div>
-        <footer class="post-footer">
-            <a class="post-read-more" href="{{url}}">Read More<span class="accessible-text"> About {{{title}}}</span></a>
-        </footer>
-    </article>
+    {{> 'post-preview'}}
 
 {{/foreach}}
 

@@ -1,0 +1,16 @@
+{{!< default}}
+
+<header class="page-title">
+    <h1 class="page-title-main">{{tag.name}}</h1>
+    <hr class="page-title-separator" />
+    <h2 class="page-title-sub">This tag has {{pagination.total}} posts</h2>
+    <hr />
+</header>
+
+<main class="content" role="main">
+
+    {{> "intro-tag"}}
+
+    {{> "loop"}}
+
+</main>

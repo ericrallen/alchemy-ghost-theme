@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{#post}}
+
+    <header class="page-title">
+        <h1 class="page-title-main">{{title}}</h1>
+        <hr class="page-title-separator" />
+        <h2 class="page-title-sub">{{{alchemy-postDate published_at}}}</h2>
+        <hr />
+    </header>
+
+    <main class="content" role="main">
+        <article class="{{post_class}}">
+            <div class="post-content">
+
+                {{ content }}
+
+            </div>
+            <footer class="post-footer">
+
+                {{{alchemy-postAuthor author 'preview'}}}
+
+            </footer>
+        </article>
+    </main>
+
+{{/post}}

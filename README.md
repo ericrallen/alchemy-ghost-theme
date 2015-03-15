@@ -1,4 +1,4 @@
-#Alchemy v0.0.1
+#alchemy-ghost v0.1.0
 
 **Alchemy is still very much a work in progress, it's not ready for use just yet and definitely doesn't deliver on all of its features yet.**
 
@@ -30,12 +30,20 @@ In the future, I'll explore using the Plugin system or the Ghost API to take car
 
 Many of Alchemy's optional features can easily be toggled via changing values in `config/config.js`.
 
-###Syntax Highlighting (not implemented yet)
+###Syntax Highlighting (in progress)
 
 Alchemy makes use of highlightjs to syntax highlight your code. You can set which highlightjs theme you'd like to use in `config/config.js`.
 
 ###Future-Friendly, Forward-Thinking (in progress)
 
-Not only was Alchemy was built with Ghost's best-practices in mind, it also takes steps to plan ahead for future releases and the features they will bring.
+Alchemy was built with Ghost's best-practices in mind where possible, and as few hacks as necessary to achieve ifs functionality, it also takes steps to plan ahead for future releases and the features they will bring.
 
 When Ghost starts rendering your Post preview using the theme's `post.css` file, Alchemy will be ready.
+
+###Accessibility (in progress)
+
+Alchemy has been built to be accessible to all users.
+
+###SEO (in progress)
+
+I've partnered with an SEO specialist to make sure that the end result of Alchemy will maximize your SEO impact.

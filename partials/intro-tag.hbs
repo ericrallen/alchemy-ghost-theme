@@ -1,0 +1,25 @@
+{{#tag}}
+
+    <section class="tag-intro blog-intro">
+
+        {{#if image}}
+
+            <div class="blog-intro-image">
+                    <img src="{{image}}" alt="" />
+            </div>
+
+        {{/if}}
+
+        {{#if description}}
+
+            <div class="blog-intro-description{{#if image}} has-image{{/if}}">
+
+                {{{description}}}
+
+            </div>
+
+        {{/if}}
+
+    </section>
+
+{{/tag}}

@@ -1,6 +1,6 @@
 {
   "name": "alchemy-ghost",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Typographic Ghost theme originally built for InterwebAlchemy",
   "main": "index.hbs",
   "scripts": {

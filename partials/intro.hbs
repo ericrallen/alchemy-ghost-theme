@@ -1,0 +1,16 @@
+<section class="blog-intro">
+
+    {{#if @blog.logo}}
+
+        <div class="blog-intro-image">
+            <img src="{{@blog.logo}}" alt="" />
+        </div>
+
+    {{/if}}
+
+    <div class="blog-intro-description{{#if @blog.logo}} has-image{{/if}}">
+
+        {{{@blog.description}}}
+
+    </div>
+</section>

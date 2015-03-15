@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{#author}}
+
+    <header class="page-title">
+        <h1 class="page-title-main">{{name}}</h1>
+        <hr class="page-title-separator" />
+
+        {{#if location}}
+
+            <h2 class="page-title-sub">{{location}}</h2>
+            <hr />
+
+        {{/if}}
+
+    </header>
+
+{{/author}}
+
+<main id="content" class="content" role="main">
+
+        {{> "intro-author"}}
+
+        {{> "loop"}}
+
+</main>

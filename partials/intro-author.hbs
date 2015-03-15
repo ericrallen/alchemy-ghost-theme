@@ -1,0 +1,39 @@
+{{#author}}
+
+    <section class="author-intro blog-intro">
+
+        {{#if image}}
+
+            <div class="blog-intro-image">
+
+                {{#if website}}<a href="{{website}}">{{/if}}
+
+                    <img src="{{image}}" alt="Photo of {{name}}" />
+
+                {{#if website}}</a>{{/if}}
+
+            </div>
+
+        {{/if}}
+
+        {{#if bio}}
+
+            <div class="blog-intro-description{{#if image}} has-image{{/if}}">
+
+                {{{bio}}}
+
+                {{#if website}}
+
+                    <p class="author-intro-site">
+                        <a href="{{website}}">Website</a>
+                    </p>
+
+                {{/if}}
+
+            </div>
+
+        {{/if}}
+
+    </section>
+
+{{/author}}

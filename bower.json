@@ -1,0 +1,25 @@
+{
+  "name": "alchemy-ghost",
+  "version": "0.1.0",
+  "authors": [
+    "Eric Allen <info@interwebalchemy.com>"
+  ],
+  "description": "Typographic Ghost theme originally built for InterwebAlchemy",
+  "main": "index.hbs",
+  "keywords": [
+    "ghost",
+    "theme",
+    "alchemy",
+    "interweb",
+    "ghostblog"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ericrallen/alchemy-ghost-theme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,17 @@
+<article class="post-preview {{post_class}}">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+
+        {{{alchemy-postDate published_at}}}
+
+    </header>
+    <div class="post-excerpt">
+        <p>{{excerpt words="30"}}</p>
+    </div>
+    <footer class="post-footer">
+
+        {{{alchemy-postAuthor author 'preview'}}}
+
+        <a class="post-read-more" href="{{url}}">Read More<span class="accessible-text"> About {{{title}}}</span></a>
+    </footer>
+</article>
