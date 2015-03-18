@@ -13,15 +13,14 @@
     }
 
     body {
-        width: 90%;
+        width: 100%;
         height: 100%;
         overflow-y: scroll; //force scroll bar so everything matches up regardless of page length
         font-size: $body-copy-size;
         line-height: $body-copy-line-height;
         color: $body-copy-color;
         font-family: $body-copy-family;
-        margin: 0 5%;
-        padding: 20px;
+        margin: 0;
         font-weight: $body-copy-weight;
     }
 
@@ -42,9 +41,6 @@
         }
     }
 
-    .content-pagination {
-        margin: 30px auto;
-        color: $meta-item-color;
-        text-transform: lowercase;
-        font-size: $meta-item-size;
+    .blog-body {
+        padding: 0 5%;
     }

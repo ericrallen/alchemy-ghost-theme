@@ -7,9 +7,9 @@
 
         {{{alchemy-pageTitle @blog.title meta_title}}}
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather:400,400italic,700" />
         <link rel="stylesheet" href="{{asset "css/theme.min.css"}}" />
         <link rel="stylesheet" href="{{asset "css/post.min.css"}}" />
-        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
 
         {{{alchemy-syntaxHighlightingStyle}}}
 
@@ -17,20 +17,28 @@
 
     </head>
     <body class="{{body_class}}">
+        <div class="drawer-outer">
+            <div class="drawer-inner">
 
-        {{{alchemy-searchFeature}}}
+                {{navigation}}
 
-        {{{body}}}
+                <div class="blog-body">
+                    {{{body}}}
+                </div>
 
-        <footer class="blog-footer">
+                 <footer class="blog-footer">
 
-            {{{alchemy-poweredByFooter}}}
+                    {{{alchemy-mailchimpForm}}}
 
-        </footer>
+                    {{{alchemy-poweredByFooter}}}
+
+                </footer>
 
         {{ghost_foot}}
 
         {{{alchemy-syntaxHighlightingScript}}}
 
+        <script src="{{asset "js/theme.min.js"}}"></script>
+        <script>transformicons.add('.tcon')</script>
     </body>
 </html>

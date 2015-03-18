@@ -2,16 +2,21 @@
     .pagination {
         &-notice {
             text-align: center;
-            margin-bottom: 0;
+            margin: 0 auto;
         }
 
         &-newer {
-            margin-top: 10px;
             float: left;
         }
 
         &-older {
-            margin-top: 10px;
             float: right;
         }
+    }
+
+    .content-pagination {
+        margin: 60px auto;
+        color: $meta-item-color;
+        text-transform: lowercase;
+        font-size: $meta-item-size;
     }

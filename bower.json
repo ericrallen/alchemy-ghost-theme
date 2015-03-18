@@ -1,6 +1,6 @@
 {
   "name": "alchemy-ghost",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [
     "Eric Allen <info@interwebalchemy.com>"
   ],
@@ -23,7 +23,6 @@
     "tests"
   ],
   "dependencies": {
-    "bourbon": "~4.2.1",
     "normalize.css": "~3.0.2"
   }
 }

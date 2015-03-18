@@ -68,8 +68,8 @@ module.exports = function() {
             nofollow = '';
         }
 
-        var content = '<section class="blog-footer-poweredby">' +
-                            '   <p>Proudly <a href="https://ghost.org"' + nofollow + '>published with Ghost</a>.</p><p>Proudly <a href="https://github.com/ericrallen/alchemy-ghost-theme"' + nofollow + '>built with Alchemy</a>.</p>' +
+        var content = '<section class="blog-footer-poweredby cf">' +
+                            '   <p><a href="https://ghost.org"' + nofollow + '>Powered by Ghost</a> | <a href="https://github.com/ericrallen/alchemy-ghost-theme"' + nofollow + '>Built with Alchemy</a></p>' +
                             '</section>'
         ;
 
@@ -145,5 +145,30 @@ module.exports = function() {
 
             return new hbs.SafeString('<meta name="title" content="' + titleString + '" />' + "\n" + '<title>' + titleString + '</title>');
         }
+    });
+
+    hbs.registerHelper('alchemy-mailchimpForm', function(options) {
+        if(typeof alchemy.mailchimp_action_url === 'undefined' || !alchemy.mailchimp_action_url) return false;
+
+        var form = '<div id="mc_embed_signup" class="newsletter-signup">' + "\n" +
+                    '   <form action="/' + alchemy.mailchimp_action_url + '" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-signup-form" target="_blank">' + "\n" +
+                    '       <div id="mc_embed_signup_scroll">' + "\n" +
+                    '           <h2 class="newsletter-signup-header">Newsletter</h2>' + "\n" +
+                    '           <div class="mc-field-group">' + "\n" +
+                    '               <label for="mce-EMAIL" class="accessible-text">Email Address</label>' + "\n" +
+                    '               <input type="email" placeholder="Email Address" value="" name="EMAIL" class="required email" id="mce-EMAIL">' + "\n" +
+                    '           </div>' + "\n" +
+                    '           <div id="mce-responses" class="clear">' + "\n" +
+                    '               <div class="response" id="mce-error-response" style="display:none"></div>' + "\n" +
+                    '               <div class="response" id="mce-success-response" style="display:none"></div>' + "\n" +
+                    '           </div>' + "\n" +
+                    '           <div style="position: absolute; left: -5000px;"><input type="text" name="b_94bd5b357b8df8d6a0754c9bb_06b5870484" tabindex="-1" value=""></div>' + "\n" +
+                    '           <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>' + "\n" +
+                    '       </div>' + "\n" +
+                    '   </form>' + "\n" +
+                    '</div>'
+        ;
+
+        return new hbs.SafeString(form);
     });
 };

@@ -1,0 +1,18 @@
+<div class="blog-menu-button">
+    <button id="toggle-nav-drawer" type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
+        <span class="tcon-menu__lines" aria-hidden="true"></span><span class="tcon-menu-text">Menu</span>
+        <span class="tcon-visuallyhidden"> toggle</span>
+    </button>
+</div>
+
+<div id="blog-menu" class="blog-nav">
+    <nav class="blog-nav-list-wrapper">
+        <ul class="blog-nav-list">
+            {{#foreach navigation}}
+                <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+
+            <li class="nav-subscribe" role="presentation"><a href="{{@blog.url}}/rss">RSS</a></li>
+        </ul>
+    </nav>
+</div>

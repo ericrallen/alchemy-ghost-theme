@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
         uglify: {
             build: {
-                src: ['assets/js/**/*.js'],
+                src: ['assets/js/**/*.js', 'assets/js/functions.js'],
                 dest: 'assets/js/theme.min.js'
             }
         },

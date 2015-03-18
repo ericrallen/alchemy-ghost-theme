@@ -9,3 +9,9 @@
         padding: 0;
         border: 0;
     }
+
+    .cf:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
