@@ -3,5 +3,28 @@
         &-description {
             color: $intro-copy-color;
             font-size: $intro-copy-size;
+
+            > p {
+                &:first-of-type {
+                    margin: 0 0 15px;
+                }
+
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+
+
+        }
+
+        &-image {
+            width: 70%;
+            margin: 30px auto;
+
+            img {
+                width: 100%;
+                height: auto;
+                vertical-align: bottom;
+            }
         }
     }

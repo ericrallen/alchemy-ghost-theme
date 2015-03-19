@@ -1,4 +1,4 @@
-#alchemy-ghost v0.1.2
+#alchemy-ghost v0.1.3
 
 **Alchemy is still very much a work in progress, it's not ready for use just yet and definitely doesn't deliver on all of its features yet.**
 
@@ -32,7 +32,7 @@ In the future, I'll explore using the Plugin system or the Ghost API to take car
 
 Many of Alchemy's optional features can easily be toggled via changing values in `config/config.js`.
 
-###Syntax Highlighting (in progress)
+###Syntax Highlighting
 
 Alchemy makes use of highlightjs to syntax highlight your code. You can set which highlightjs theme you'd like to use in `config/config.js`.
 
@@ -44,9 +44,9 @@ When Ghost starts rendering your Post preview using the theme's `post.css` file,
 
 ###3rd-Party Integrations
 
-Alchemy supports easy integration of a simple MailChimp newsletter signup form.
+Alchemy supports easy integration of a simple MailChimp newsletter signup form and Disqus commenting system.
 
-In the future it will support easy integration of Disqus, FeedPress, Google Analytics, Webmaster Tools, and other useful, but optional, 3rd-party integrations.
+In the future it will support easy integration of FeedPress, Google Analytics, Webmaster Tools, and other useful, but optional, 3rd-party integrations.
 
 A plugin will be released alongside Alchemy's final version which will aim to let you replace the RSS feed `<link>` tag in the `ghost_head` helper so that users can correctly subscribe to your FeedPress or other hosted RSS feed with just your site's URL.
 

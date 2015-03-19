@@ -419,12 +419,6 @@ th {
 .tcon > * {
   display: block;
 }
-.tcon:hover, .tcon:focus {
-  outline: none;
-}
-.tcon::-moz-focus-inner {
-  border: 0;
-}
 
 .tcon-menu__lines {
   display: inline-block;
@@ -623,12 +617,13 @@ a:hover, a:focus {
 }
 
 .page-title-main {
-  font-size: 48px;
+  font-size: 14vw;
   color: #293132;
   text-align: right;
   line-height: 1.4;
   font-weight: 700;
   font-family: "Merriweather", "Georgia", "Times New Roman", serif;
+  letter-spacing: 2px;
   margin: 0;
 }
 .page-title-separator {
@@ -651,12 +646,28 @@ a:hover, a:focus {
   line-height: 1.2;
   font-weight: 300;
   font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
+  letter-spacing: 3px;
   margin: 0;
 }
 
 .blog-intro-description {
   color: #8e9aaf;
   font-size: 12px;
+}
+.blog-intro-description > p:first-of-type {
+  margin: 0 0 15px;
+}
+.blog-intro-description > p:last-of-type {
+  margin: 0;
+}
+.blog-intro-image {
+  width: 70%;
+  margin: 30px auto;
+}
+.blog-intro-image img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
 }
 
 .pagination-notice {
@@ -678,9 +689,14 @@ a:hover, a:focus {
 }
 
 .blog-footer {
+  padding: 30px 5%;
+}
+.blog-footer.has-form {
   background: #293132;
   color: #f9f9fe;
-  padding: 30px 5%;
+}
+.post-template .blog-footer.has-form {
+  margin-top: 60px;
 }
 .blog-footer-poweredby {
   font-size: 10px;
@@ -691,19 +707,40 @@ a:hover, a:focus {
 
 .newsletter-signup {
   text-align: center;
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
 }
 .newsletter-signup-header {
-  margin: 0 auto 15px;
+  font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
+  margin: 0 auto 30px;
   line-height: 1;
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 .newsletter-signup-form input {
   text-align: center;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #ccc;
   margin-bottom: 15px;
+  color: #293132;
+}
+.newsletter-signup-form input[type="submit"] {
+  background: #f9f9fe;
+  color: #293132;
+  font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-transform: all 0.3s ease;
+          transform: all 0.3s ease;
+  border-color: #f9f9fe;
+  font-size: 12px;
+}
+.newsletter-signup-form input[type="submit"]:hover, .newsletter-signup-form input[type="submit"]:focus {
+  background: #8e9aaf;
+  border-color: #8e9aaf;
 }
 
 .accessible-text {

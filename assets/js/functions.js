@@ -4,7 +4,7 @@
         var pub = {};
 
         pub.init = function init() {
-
+            //initial declaration of  paramters for module here
         };
 
         pub.ready = function ready() {
@@ -14,13 +14,24 @@
         };
 
         pub.loaded = function loaded() {
-
+            //call methods that require fully loaded DOM
         };
 
         function bindEvents() {
-            $('#toggle-nav-drawer').on('click', function(e) {
-                $('body').toggleClass('drawer-open');
-            });
+            $('#toggle-nav-drawer')
+                .on('click', function(e) {
+                    $('body').toggleClass('drawer-open');
+                })
+                .on('keyup', function(e) {
+                    if(e.which === 13) {
+                        if(e.preventDefault) {
+                            e.preventDefault()
+                        }
+
+                        $('body').toggleClass('drawer-open');
+                    }
+                })
+            ;
         }
 
         return pub;

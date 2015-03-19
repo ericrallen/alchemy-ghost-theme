@@ -27,14 +27,6 @@ $tcon-menu-arrow360left-transformation: (
     > * {
         display: block;
     }
-
-    &:hover,
-    &:focus {
-        outline: none; // see issue #36 https://github.com/grayghostvisuals/transformicons/issues/36
-    }
-    &::-moz-focus-inner {
-        border: 0;
-    }
 }
 
 @mixin tcon-menu-lines {

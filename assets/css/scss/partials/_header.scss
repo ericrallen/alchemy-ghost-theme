@@ -8,6 +8,7 @@
             line-height: $page-header-line-height;
             font-weight: $page-header-weight;
             font-family: $page-header-family;
+            letter-spacing: $page-header-spacing;
             margin: 0;
         }
 
@@ -33,6 +34,7 @@
             line-height: $page-header-sub-line-height;
             font-weight: $page-header-sub-weight;
             font-family: $page-header-sub-family;
+            letter-spacing: $page-header-sub-spacing;
             margin: 0;
         }
     }

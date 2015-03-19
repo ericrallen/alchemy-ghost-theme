@@ -12,6 +12,7 @@
   margin-top: 0;
   font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .post-title a {
   text-decoration: none;

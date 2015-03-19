@@ -31,25 +31,23 @@ module.exports = function() {
         if(context.indexOf('index') > -1) return true;
     }
 
-    //hbs custom function to check if we are on the homepage
-    //we use this so that we can add rel="nofollow" to our footer Ghost and Alchemy links for SEO purposes  if this isn't the homepage
-    hbs.registerHelper('alchemy-checkHomePage', function alchemyCheckHomePage(options) {
+    function alchemyCheckHomePage(options) {
         if(options.data.root.context.indexOf('home') > -1) return options.fn();
 
         return options.inverse();
-    });
+    }
 
-    hbs.registerHelper('alchemy-showSubTitle', function alchemyShowSubTitle(options) {
+    function alchemyShowSubTitle(options) {
         if(typeof alchemy.sub_title !== 'undefined' && alchemy.sub_title) return new hbs.SafeString('<h2 class="page-title-sub">' + alchemy.sub_title + '</h2>' + "\n" + '<hr />');
-    });
+    }
 
-    hbs.registerHelper('alchemy-postDate', function alchemyPostDate(date, options) {
+    function alchemyPostDate(date, options) {
         if(typeof alchemy.use_relative_date !== 'undefined' && alchemy.use_relative_date) return new hbs.SafeString('<p class="post-time">posted <time class="post-date" datetime="' + moment(date).format('YYYY-MM-DD') + '">' + moment(date).fromNow() + '</time></p>');
 
         return new hbs.SafeString('<p class="post-time"><time class="post-date" datetime="' + moment(date).format('YYYY-MM-DD') + '">' + moment(date).format('MMM Do YYYY') + '</time></p>');
-    });
+    }
 
-    hbs.registerHelper('alchemy-postAuthor', function alchemyPostAuthor(author, type, options) {
+    function alchemyPostAuthor(author, type, options) {
         var posted_by = alchemy.posted_by_text ? alchemy.posted_by_text + ' ' : 'Posted by ';
 
         type = type ? type : 'post';
@@ -59,9 +57,9 @@ module.exports = function() {
         } else {
             return new hbs.SafeString('<p class="post-author">' + posted_by + ' <a href="/author/' + author.slug + '" class="post-author-link">' + author.name + '</a></p>');
         }
-    });
+    }
 
-    hbs.registerHelper('alchemy-poweredByFooter', function alchemyPoweredByFooter(options) {
+    function alchemyPoweredByFooter(options) {
         var nofollow = ' rel="nofollow"';
 
         if(checkHomePage(options.data.root.context)) {
@@ -74,9 +72,9 @@ module.exports = function() {
         ;
 
         return new hbs.SafeString(content);
-    });
+    }
 
-    hbs.registerHelper('alchemy-syntaxHighlightingStyle', function alchemySyntaxHighlightingStyle(options) {
+    function alchemySyntaxHighlightingStyle(options) {
         var themeUrl;
 
         if(typeof alchemy.syntax_theme !== 'undefined' && alchemy.syntax_theme) {
@@ -90,13 +88,13 @@ module.exports = function() {
         }
 
         if(typeof alchemy.syntax_highlighting && alchemy.syntax_highlighting) return new hbs.SafeString('<link rel="stylesheet" href="' + themeUrl + '" />');
-    });
+    }
 
-    hbs.registerHelper('alchemy-syntaxHighlightingScript', function alchemySyntaxHighlightingScript(options) {
+    function alchemySyntaxHighlightingScript(options) {
         if(typeof alchemy.syntax_highlighting && alchemy.syntax_highlighting) return new hbs.SafeString('<script src="/assets/vendor/highlight/highlight.pack.js"></script>');
-    });
+    }
 
-    hbs.registerHelper('alchemy-pageTitle', function alchemyPageTitle(blogTitle, metaTitle, options) {
+    function alchemyPageTitle(blogTitle, metaTitle, options) {
         var titleString;
 
         var title = '';
@@ -108,7 +106,21 @@ module.exports = function() {
             subTitle = blogTitle;
         }
 
-        if(typeof alchemy.title_separator !== 'undefined') {
+        if(!metaTitle) {
+            if(typeof options.data.root.post !== 'undefined' && options.data.root.post.title) {
+                metaTitle = options.data.root.post.title;
+            } else if(typeof options.data.root.author !== 'undefined' && options.data.root.author.name) {
+                metaTitle = options.data.root.author.name;
+            } else if(typeof options.data.root.tag !== 'undefined' && options.data.root.tag.name) {
+                metaTitle = 'Posts Tagged: ' + options.data.root.tag.name;
+            } else {
+                metaTitle = '';
+                sep = '';
+                showBlogTitle = true;
+            }
+        }
+
+        if(typeof alchemy.title_separator !== 'undefined' && sep !== '') {
             if(alchemy.title_separator === '') {
                 sep = ' ';
             } else if(alchemy.title_separator === ' ') {
@@ -135,7 +147,6 @@ module.exports = function() {
             }
 
             return new hbs.SafeString('<meta name="title" content="' + titleString + '" />' + "\n" + '<title>' + titleString + '</title>');
-
         } else {
             titleString = metaTitle;
 
@@ -145,9 +156,9 @@ module.exports = function() {
 
             return new hbs.SafeString('<meta name="title" content="' + titleString + '" />' + "\n" + '<title>' + titleString + '</title>');
         }
-    });
+    }
 
-    hbs.registerHelper('alchemy-mailchimpForm', function(options) {
+    function alchemyMailChimpForm(options) {
         if(typeof alchemy.mailchimp_action_url === 'undefined' || !alchemy.mailchimp_action_url) return false;
 
         var form = '<div id="mc_embed_signup" class="newsletter-signup">' + "\n" +
@@ -170,5 +181,99 @@ module.exports = function() {
         ;
 
         return new hbs.SafeString(form);
-    });
+    }
+
+    function alchemyBlogFooter(options) {
+        var formClass = '';
+
+        if(typeof alchemy.mailchimp_action_url !== 'undefined' && alchemy.mailchimp_action_url) {
+           formClass = ' has-form';
+        }
+
+        var content = '<footer class="blog-footer' + formClass + '">' + "\n" +
+                    alchemyMailChimpForm(options) + "\n" +
+                    alchemyPoweredByFooter(options) + "\n" +
+                '</footer>'
+        ;
+
+        return new hbs.SafeString(content);
+    }
+
+    function alchemySocialMediaLinks(options) {
+        var links = '';
+
+        if(typeof alchemy.social_media_links !== 'undefined' && alchemy.social_media_links.length) {
+            links = '<p>Where to find me:<ul class="blog-intro-social">';
+
+            var linkArray = alchemy.social_media_links;
+
+            linkArray.reverse();
+
+            var i = linkArray.length;
+
+            while(i--) {
+                links += '<li class="blog-intro-social-item"><a href="' + linkArray[i].url + '"><span class="accessible-text">Find me on </span>' + linkArray[i].name + '</a></li>';
+            }
+        }
+
+        links += '</ul></p>';
+
+        return new hbs.SafeString(links);
+    }
+
+    function alchemyDisqusComments(postId, options) {
+        var content = '';
+
+        if(typeof alchemy.disqus_shortname !== 'undefined' && alchemy.disqus_shortname) {
+            content = '<div id="disqus_thread"></div>' + "\n" +
+                    '<script type="text/javascript">' + "\n" +
+                        'var disqus_shortname = "' + alchemy.disqus_shortname +'";' + "\n" +
+                        'var disqus_identifier = ' + postId + ';' + "\n" +
+                        '(function() {' + "\n" +
+                            'var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;' + "\n" +
+                            'dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";' + "\n" +
+                            '(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);' + "\n" +
+                        '})();' + "\n" +
+                    '</script>' + "\n" +
+                    '<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>' + "\n" +
+                    '<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>'
+            ;
+        }
+
+        return new hbs.SafeString(content);
+    }
+
+    //conditional: are we on homepage?
+    hbs.registerHelper('alchemy-checkHomePage', alchemyCheckHomePage);
+
+    //add sub-title text to header
+    hbs.registerHelper('alchemy-showSubTitle', alchemyShowSubTitle);
+
+    //convert post date into relative date
+    hbs.registerHelper('alchemy-postDate', alchemyPostDate);
+
+    //format author
+    hbs.registerHelper('alchemy-postAuthor', alchemyPostAuthor);
+
+    //display powered by and built with message
+    hbs.registerHelper('alchemy-poweredByFooter', alchemyPoweredByFooter);
+
+    //add highlight.js CSS & JS
+    hbs.registerHelper('alchemy-syntaxHighlightingStyle', alchemySyntaxHighlightingStyle);
+    hbs.registerHelper('alchemy-syntaxHighlightingScript', alchemySyntaxHighlightingScript);
+
+    //create page title based on config
+    hbs.registerHelper('alchemy-pageTitle', alchemyPageTitle);
+
+    //add mailchimp form
+    hbs.registerHelper('alchemy-mailchimpForm', alchemyMailChimpForm);
+
+    //build website footer
+    hbs.registerHelper('alchemy-blogFooter', alchemyBlogFooter);
+
+    //build social media links from config
+    hbs.registerHelper('alchemy-socialMediaLinks', alchemySocialMediaLinks);
+
+    //disqus comments
+    hbs.registerHelper('alchemy-disqusComments', alchemyDisqusComments);
 };

@@ -1,8 +1,15 @@
 
     .blog-footer {
-        background: $black;
-        color: $white;
         padding: 30px 5%;
+
+        &.has-form {
+            background: $black;
+            color: $white;
+
+            .post-template & {
+                margin-top: 60px;
+            }
+        }
 
         &-poweredby {
             font-size: 10px;
@@ -14,21 +21,44 @@
 
     .newsletter-signup {
         text-align: center;
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
 
         &-header {
-            margin: 0 auto 15px;
-            line-height: 1;
+            font-family: $footer-heading-family;
+            margin: 0 auto 30px;
+            line-height: $no-line-height;
+            letter-spacing: $footer-heading-spacing;
+            font-weight: $footer-heading-weight;
+            text-transform: $footer-heading-transform;
         }
 
         &-form {
             input {
                 text-align: center;
                 width: 100%;
-                padding: 5px;
+                padding: 10px;
                 border: 1px solid #ccc;
                 margin-bottom: 15px;
+                color: $black;
+
+                &[type="submit"] {
+                    background: $white;
+                    color: $black;
+                    font-family: $lato;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    transform: all 0.3s ease;
+                    border-color: $white;
+                    font-size: 12px;
+
+                    &:hover,
+                    &:focus {
+                        background: $mid-gray;
+                        border-color: $mid-gray;
+                    }
+                }
             }
         }
     }
