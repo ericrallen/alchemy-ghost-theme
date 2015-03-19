@@ -6,6 +6,8 @@ Alchemy is a typographic Ghost theme that's built to be lean, modern, performant
 
 Alchemy is optimized for developer blogs where code will be posted, but will work just as well for blogs featuring text and images instead of code.
 
+It is currently only optimized for dislay on mobile devices, but larger screen sizes will be taken into account soon.
+
 ##Features
 
 Alchemy has (and will have) several features that make it worth checking out, below I've highlighted a few of them.
