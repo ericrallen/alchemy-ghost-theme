@@ -115,7 +115,6 @@ module.exports = function() {
                 metaTitle = 'Posts Tagged: ' + options.data.root.tag.name;
             } else {
                 metaTitle = '';
-                sep = '';
                 showBlogTitle = true;
             }
         }
