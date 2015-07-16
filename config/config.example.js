@@ -8,7 +8,7 @@ var alchemyConfig = {
     mailchimp_action_url: "",
     posted_by_text: "Written by",
     show_author_in_preview: true,
-    show_blow_name_in_title: true,
+    show_blog_name_in_title: true,
     social_media_links: [],
     sub_title: "",
     syntax_highlighting: true,

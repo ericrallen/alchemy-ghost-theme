@@ -1,4 +1,4 @@
-#alchemy-ghost v0.1.5
+#alchemy-ghost v0.1.6
 
 **Alchemy is still very much a work in progress, it's not ready for use just yet and definitely doesn't deliver on all of its features yet.**
 

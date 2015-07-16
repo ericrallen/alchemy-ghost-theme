@@ -106,7 +106,7 @@ module.exports = function() {
         var title = '';
         var subTitle = '';
         var sep = '|';
-        var showBlogTitle = alchemy.show_blow_name_in_title ? alchemy.show_blow_name_in_title : false;
+        var showBlogTitle = alchemy.show_blog_name_in_title ? alchemy.show_blog_name_in_title : false;
 
         if(showBlogTitle) {
             subTitle = blogTitle;
