@@ -1,8 +1,16 @@
 
     .blog-intro {
         &-description {
-            color: $intro-copy-color;
             font-size: $intro-copy-size;
+
+            .alchemy &,
+            & {
+                color: $alchemy-intro-copy-color;
+            }
+
+            .security & {
+                color: $security-intro-copy-color;
+            }
 
             > p {
                 &:first-of-type {

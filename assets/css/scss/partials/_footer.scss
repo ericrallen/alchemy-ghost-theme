@@ -3,8 +3,17 @@
         padding: 30px 5%;
 
         &.has-form {
-            background: $black;
-            color: $white;
+
+            .alchemy &,
+            & {
+                background: $alchemy-black;
+                color: $alchemy-white;
+            }
+
+            .security & {
+                background: $security-black;
+                color: $security-white;
+            }
 
             .post-template & {
                 margin-top: 60px;
@@ -13,9 +22,17 @@
 
         &-poweredby {
             font-size: 10px;
-            color: $meta-item-color;
             margin: 60px 0 0;
             text-align: center;
+
+            .alchemy &,
+            & {
+                color: $alchemy-meta-item-color;
+            }
+
+            .security & {
+                color: $security-meta-item-color;
+            }
         }
     }
 
@@ -38,25 +55,50 @@
                 text-align: center;
                 width: 100%;
                 padding: 10px;
-                border: 1px solid #ccc;
                 margin-bottom: 15px;
-                color: $black;
+
+               .alchemy &,
+               & {
+                    color: $alchemy-black;
+                    border: 1px solid $alchemy-dev-gray;
+                }
+
+                .security & {
+                    color: $security-black;
+                    border: 1px solid $security-dev-gray;
+                }
 
                 &[type="submit"] {
-                    background: $white;
-                    color: $black;
                     font-family: $lato;
                     font-weight: 700;
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     transform: all 0.3s ease;
-                    border-color: $white;
                     font-size: 12px;
 
-                    &:hover,
-                    &:focus {
-                        background: $mid-gray;
-                        border-color: $mid-gray;
+                    .alchemy &,
+                    & {
+                        background: $alchemy-white;
+                        color: $alchemy-black;
+                        border-color: $alchemy-white;
+
+                        &:hover,
+                        &:focus {
+                            background: $alchemy-mid-gray;
+                            border-color: $alchemy-mid-gray;
+                        }
+                    }
+
+                    .security & {
+                        background: $security-white;
+                        color: $security-black;
+                        border-color: $security-white;
+
+                        &:hover,
+                        &:focus {
+                            background: $security-mid-gray;
+                            border-color: $security-mid-gray;
+                        }
                     }
                 }
             }

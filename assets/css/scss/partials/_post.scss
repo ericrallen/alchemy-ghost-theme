@@ -9,8 +9,16 @@
 
             .content > & ~ & {
                 margin: 30px auto 0;
-                border-top: 1px solid $border-color;
                 padding-top: 29px;
+
+                .alchemy &,
+                & {
+                    border-top: 1px solid $alchemy-border-color;
+                }
+
+                .security & {
+                    border-top: 1px solid $security-border-color;
+                }
             }
         }
 
@@ -22,12 +30,29 @@
 
             a {
                 text-decoration: none;
-                color: $item-title-color;
+
+                .alchemy &,
+                & {
+                    color: $alchemy-item-title-color;
+
+                    &:hover,
+                    &:focus {
+                        color: $alchemy-link-hover-color;
+                    }
+                }
+
+                .security & {
+                    color: $security-item-title-color;
+
+                    &:hover,
+                    &:focus {
+                        color: $security-link-hover-color;
+                    }
+                }
 
                 &:hover,
                 &:focus {
                     text-decoration: underline;
-                    color: $link-hover-color;
                 }
             }
         }
@@ -35,7 +60,15 @@
         &-time,
         &-author {
             font-size: $meta-item-size;
-            color: $meta-item-color;
+
+            .alchemy &,
+            & {
+                color: $alchemy-meta-item-color;
+            }
+
+            .security & {
+                color: $security-meta-item-color;
+            }
         }
 
         &-read-more {

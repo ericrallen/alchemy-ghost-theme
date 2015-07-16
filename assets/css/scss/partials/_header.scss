@@ -3,13 +3,24 @@
     .page-title {
         &-main {
             font-size: $page-header-size;
-            color: $page-heading-color;
             text-align: $page-header-align;
             line-height: $page-header-line-height;
             font-weight: $page-header-weight;
-            font-family: $page-header-family;
             letter-spacing: $page-header-spacing;
             margin: 0;
+
+            .alchemy &,
+            & {
+                color: $alchemy-page-heading-color;
+                font-family: $alchemy-page-header-family;
+                text-transform: $alchemy-page-header-transform;
+            }
+
+            .security & {
+                color: $security-page-heading-color;
+                font-family: $security-page-header-family;
+                text-transform: $security-page-header-transform;
+            }
         }
 
         &-separator {
@@ -19,22 +30,38 @@
             &:before {
                 content: '';
                 display: block;
-                border-top: 5px solid $page-header-divider-color;
                 width: 35%;
                 position: relative;
                 left: 65%;
+
+                .alchemy &,
+                & {
+                    border-top: 5px solid $alchemy-page-header-divider-color;
+                }
+
+                .security & {
+                    border-top: 5px solid $security-page-header-divider-color;
+                }
             }
         }
 
         &-sub {
             text-transform: $page-header-sub-transform;
             font-size: $page-header-sub-size;
-            color: $page-heading-sub-color;
             text-align: $page-header-sub-align;
             line-height: $page-header-sub-line-height;
             font-weight: $page-header-sub-weight;
             font-family: $page-header-sub-family;
             letter-spacing: $page-header-sub-spacing;
             margin: 0;
+
+            .alchemy &,
+            & {
+                color: $alchemy-page-heading-sub-color;
+            }
+
+            .security & {
+                color: $security-page-heading-sub-color;
+            }
         }
     }

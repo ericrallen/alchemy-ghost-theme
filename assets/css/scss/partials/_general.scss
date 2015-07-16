@@ -18,26 +18,55 @@
         overflow-y: scroll; //force scroll bar so everything matches up regardless of page length
         font-size: $body-copy-size;
         line-height: $body-copy-line-height;
-        color: $body-copy-color;
         font-family: $body-copy-family;
         margin: 0;
         font-weight: $body-copy-weight;
+
+        .alchemy &,
+        & {
+            color: $alchemy-body-copy-color;
+        }
+
+        .security & {
+            color: $security-body-copy-color;
+        }
     }
 
     hr {
         border: 0;
         height: 1px;
-        background: $hr-color;
         margin: 30px auto;
+
+        .alchemy &,
+        & {
+             background: $alchemy-hr-color;
+        }
+
+        .security & {
+            background: $security-hr-color;
+        }
     }
 
     a {
-        color: $link-color;
         transition: all 0.3s ease;
 
-        &:hover,
-        &:focus {
-            color: $link-hover-color;
+        .alchemy &,
+        & {
+            color: $alchemy-link-color;
+
+            &:hover,
+            &:focus {
+                color: $alchemy-link-hover-color;
+            }
+        }
+
+        .security & {
+            color: $security-link-color;
+
+            &:hover,
+            &:focus {
+                color: $security-link-hover-color;
+            }
         }
     }
 

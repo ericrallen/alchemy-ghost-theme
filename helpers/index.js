@@ -31,6 +31,12 @@ module.exports = function() {
         if(context.indexOf('index') > -1) return true;
     }
 
+    function alchemySkinClass() {
+        if(typeof alchemy.skin === 'undefined') return new hbs.SafeString('alchemy');
+
+        return new hbs.SafeString(alchemy.skin);
+    }
+
     function alchemyCheckHomePage(options) {
         if(options.data.root.context.indexOf('home') > -1) return options.fn();
 
@@ -241,6 +247,9 @@ module.exports = function() {
 
         return new hbs.SafeString(content);
     }
+
+    //apply skin class to html element
+    hbs.registerHelper('alchemy-skinClass', alchemySkinClass);
 
     //conditional: are we on homepage?
     hbs.registerHelper('alchemy-checkHomePage', alchemyCheckHomePage);

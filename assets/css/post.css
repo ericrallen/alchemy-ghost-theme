@@ -5,8 +5,13 @@
 }
 .content > .post-preview ~ .post-preview {
   margin: 30px auto 0;
-  border-top: 1px solid #ccc;
   padding-top: 29px;
+}
+.alchemy .content > .post-preview ~ .post-preview, .content > .post-preview ~ .post-preview {
+  border-top: 1px solid #ccc;
+}
+.security .content > .post-preview ~ .post-preview {
+  border-top: 1px solid #ccc;
 }
 .post-title {
   margin-top: 0;
@@ -16,14 +21,29 @@
 }
 .post-title a {
   text-decoration: none;
+}
+.alchemy .post-title a, .post-title a {
   color: #293132;
+}
+.alchemy .post-title a:hover, .alchemy .post-title a:focus, .post-title a:hover, .post-title a:focus {
+  color: #ccc;
+}
+.security .post-title a {
+  color: #f9f9fe;
+}
+.security .post-title a:hover, .security .post-title a:focus {
+  color: #ccc;
 }
 .post-title a:hover, .post-title a:focus {
   text-decoration: underline;
-  color: #ccc;
 }
 .post-time, .post-author {
   font-size: 12px;
+}
+.alchemy .post-time, .post-time, .alchemy .post-author, .post-author {
+  color: #8e9aaf;
+}
+.security .post-time, .security .post-author {
   color: #8e9aaf;
 }
 .post-read-more {

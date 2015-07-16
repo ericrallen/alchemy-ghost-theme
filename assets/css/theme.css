@@ -394,7 +394,9 @@ th {
 }
 
 .tcon {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   cursor: pointer;
   display: -webkit-flex;
@@ -513,24 +515,42 @@ body {
   overflow-y: scroll;
   font-size: 14px;
   line-height: 1.7;
-  color: #293132;
   font-family: "Merriweather", "Georgia", "Times New Roman", serif;
   margin: 0;
   font-weight: 400;
+}
+.alchemy body, body {
+  color: #293132;
+}
+.security body {
+  color: #f9f9fe;
 }
 
 hr {
   border: 0;
   height: 1px;
-  background: #ccc;
   margin: 30px auto;
+}
+.alchemy hr, hr {
+  background: #ccc;
+}
+.security hr {
+  background: #ccc;
 }
 
 a {
-  color: #007ea7;
   transition: all 0.3s ease;
 }
-a:hover, a:focus {
+.alchemy a, a {
+  color: #007ea7;
+}
+.alchemy a:hover, .alchemy a:focus, a:hover, a:focus {
+  color: #ccc;
+}
+.security a {
+  color: #43AED1;
+}
+.security a:hover, .security a:focus {
   color: #ccc;
 }
 
@@ -539,10 +559,15 @@ a:hover, a:focus {
 }
 
 .drawer-outer {
-  background: #293132;
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+.alchemy .drawer-outer, .drawer-outer {
+  background: #293132;
+}
+.security .drawer-outer {
+  background: #f9f9fe;
 }
 .drawer-inner {
   position: relative;
@@ -555,7 +580,12 @@ a:hover, a:focus {
   transition: transform 0.5s ease;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+.alchemy .drawer-inner, .drawer-inner {
   background: #f9f9fe;
+}
+.security .drawer-inner {
+  background: #293132;
 }
 .drawer-open .drawer-inner {
   -webkit-transform: translate3d(50%, 0, 0);
@@ -588,13 +618,18 @@ a:hover, a:focus {
   margin-bottom: 5px;
 }
 .blog-nav a {
-  color: #f9f9fe;
   text-decoration: none;
   opacity: 0.75;
   font-size: 15px;
   font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
   text-transform: uppercase;
   font-weight: 300;
+}
+.alchemy .blog-nav a, .blog-nav a {
+  color: #f9f9fe;
+}
+.security .blog-nav a {
+  color: #293132;
 }
 .blog-nav a:hover, .blog-nav a:focus {
   text-decoration: underline;
@@ -604,6 +639,18 @@ a:hover, a:focus {
 .tcon-menu__lines {
   -webkit-transform: scale(0.475);
           transform: scale(0.475);
+}
+.alchemy .tcon-menu__lines, .tcon-menu__lines {
+  background: #293132;
+}
+.alchemy .tcon-menu__lines:before, .alchemy .tcon-menu__lines:after, .tcon-menu__lines:before, .tcon-menu__lines:after {
+  background: #293132;
+}
+.security .tcon-menu__lines, .tcon-menu__lines {
+  background: #f9f9fe;
+}
+.security .tcon-menu__lines:before, .security .tcon-menu__lines:after, .tcon-menu__lines:before, .tcon-menu__lines:after {
+  background: #f9f9fe;
 }
 .tcon-menu--xcross.tcon-transform .tcon-menu__lines {
   -webkit-transform: scale(0.475);
@@ -618,13 +665,21 @@ a:hover, a:focus {
 
 .page-title-main {
   font-size: 14vw;
-  color: #293132;
   text-align: right;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
   letter-spacing: 2px;
   margin: 0;
+}
+.alchemy .page-title-main, .page-title-main {
+  color: #293132;
+  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
+  text-transform: none;
+}
+.security .page-title-main {
+  color: #f9f9fe;
+  font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
+  text-transform: uppercase;
 }
 .page-title-separator {
   text-align: right;
@@ -633,15 +688,19 @@ a:hover, a:focus {
 .page-title-separator:before {
   content: '';
   display: block;
-  border-top: 5px solid #ed6a5a;
   width: 35%;
   position: relative;
   left: 65%;
 }
+.alchemy .page-title-separator:before, .page-title-separator:before {
+  border-top: 5px solid #ed6a5a;
+}
+.security .page-title-separator:before {
+  border-top: 5px solid #51c479;
+}
 .page-title-sub {
   text-transform: uppercase;
   font-size: 14px;
-  color: #8e9aaf;
   text-align: right;
   line-height: 1.2;
   font-weight: 300;
@@ -649,10 +708,21 @@ a:hover, a:focus {
   letter-spacing: 3px;
   margin: 0;
 }
+.alchemy .page-title-sub, .page-title-sub {
+  color: #8e9aaf;
+}
+.security .page-title-sub {
+  color: #8e9aaf;
+}
 
 .blog-intro-description {
-  color: #8e9aaf;
   font-size: 12px;
+}
+.alchemy .blog-intro-description, .blog-intro-description {
+  color: #8e9aaf;
+}
+.security .blog-intro-description {
+  color: #8e9aaf;
 }
 .blog-intro-description > p:first-of-type {
   margin: 0 0 15px;
@@ -683,15 +753,24 @@ a:hover, a:focus {
 
 .content-pagination {
   margin: 60px auto;
-  color: #8e9aaf;
   text-transform: lowercase;
   font-size: 12px;
+}
+.alchemy .content-pagination, .content-pagination {
+  color: #8e9aaf;
+}
+.security .content-pagination {
+  color: #8e9aaf;
 }
 
 .blog-footer {
   padding: 30px 5%;
 }
-.blog-footer.has-form {
+.alchemy .blog-footer.has-form, .blog-footer.has-form {
+  background: #293132;
+  color: #f9f9fe;
+}
+.security .blog-footer.has-form {
   background: #293132;
   color: #f9f9fe;
 }
@@ -700,9 +779,14 @@ a:hover, a:focus {
 }
 .blog-footer-poweredby {
   font-size: 10px;
-  color: #8e9aaf;
   margin: 60px 0 0;
   text-align: center;
+}
+.alchemy .blog-footer-poweredby, .blog-footer-poweredby {
+  color: #8e9aaf;
+}
+.security .blog-footer-poweredby {
+  color: #8e9aaf;
 }
 
 .newsletter-signup {
@@ -722,23 +806,40 @@ a:hover, a:focus {
   text-align: center;
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   margin-bottom: 15px;
+}
+.alchemy .newsletter-signup-form input, .newsletter-signup-form input {
   color: #293132;
+  border: 1px solid #ccc;
+}
+.security .newsletter-signup-form input {
+  color: #293132;
+  border: 1px solid #ccc;
 }
 .newsletter-signup-form input[type="submit"] {
-  background: #f9f9fe;
-  color: #293132;
   font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   -webkit-transform: all 0.3s ease;
           transform: all 0.3s ease;
-  border-color: #f9f9fe;
   font-size: 12px;
 }
-.newsletter-signup-form input[type="submit"]:hover, .newsletter-signup-form input[type="submit"]:focus {
+.alchemy .newsletter-signup-form input[type="submit"], .newsletter-signup-form input[type="submit"] {
+  background: #f9f9fe;
+  color: #293132;
+  border-color: #f9f9fe;
+}
+.alchemy .newsletter-signup-form input[type="submit"]:hover, .alchemy .newsletter-signup-form input[type="submit"]:focus, .newsletter-signup-form input[type="submit"]:hover, .newsletter-signup-form input[type="submit"]:focus {
+  background: #8e9aaf;
+  border-color: #8e9aaf;
+}
+.security .newsletter-signup-form input[type="submit"] {
+  background: #f9f9fe;
+  color: #293132;
+  border-color: #f9f9fe;
+}
+.security .newsletter-signup-form input[type="submit"]:hover, .security .newsletter-signup-form input[type="submit"]:focus {
   background: #8e9aaf;
   border-color: #8e9aaf;
 }

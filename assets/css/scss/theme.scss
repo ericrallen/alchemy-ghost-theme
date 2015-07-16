@@ -1,10 +1,12 @@
 
     //normalize
     @import 'vendor/normalize/_normalize.scss';
-    @import 'vendor/transformicons/_transformicons.scss';
 
     //alchemy configuration
     @import 'config/_config.scss';
+
+    //transforming hamburger menu button
+    @import 'vendor/transformicons/_transformicons.scss';
 
     //section styles
     @import 'partials/_general.scss';

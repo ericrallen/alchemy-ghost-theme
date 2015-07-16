@@ -2,23 +2,43 @@
     //setting theme variables that should be used in the scss files
 
     //COLOR
+        //Alchemy Skin
         //text colors
-        $body-copy-color: $black;
-        $page-heading-color: $black;
-        $page-heading-sub-color: $mid-gray;
-        $meta-item-color: $mid-gray;
-        $link-color: $blue;
-        $link-hover-color: $dev-gray;
-        $intro-copy-color: $mid-gray;
-        $item-title-color: $black;
-        $drawer-link-color: $white;
+        $alchemy-body-copy-color: $alchemy-black;
+        $alchemy-page-heading-color: $alchemy-black;
+        $alchemy-page-heading-sub-color: $alchemy-mid-gray;
+        $alchemy-meta-item-color: $alchemy-mid-gray;
+        $alchemy-link-color: $alchemy-blue;
+        $alchemy-link-hover-color: $alchemy-dev-gray;
+        $alchemy-intro-copy-color: $alchemy-mid-gray;
+        $alchemy-item-title-color: $alchemy-black;
+        $alchemy-drawer-link-color: $alchemy-white;
 
         //element colors
-        $drawer-bg-color: $black;
-        $body-bg-color: $white;
-        $page-header-divider-color: $red;
-        $hr-color: $dev-gray;
-        $border-color: $dev-gray;
+        $alchemy-drawer-bg-color: $alchemy-black;
+        $alchemy-body-bg-color: $alchemy-white;
+        $alchemy-page-header-divider-color: $alchemy-red;
+        $alchemy-hr-color: $alchemy-dev-gray;
+        $alchemy-border-color: $alchemy-dev-gray;
+
+        //Security Skin
+        //text colors
+        $security-body-copy-color: $security-white;
+        $security-page-heading-color: $security-white;
+        $security-page-heading-sub-color: $security-mid-gray;
+        $security-meta-item-color: $security-mid-gray;
+        $security-link-color: $security-blue;
+        $security-link-hover-color: $security-dev-gray;
+        $security-intro-copy-color: $security-mid-gray;
+        $security-item-title-color: $security-white;
+        $security-drawer-link-color: $security-black;
+
+        //element colors
+        $security-drawer-bg-color: $security-white;
+        $security-body-bg-color: $security-black;
+        $security-page-header-divider-color: $security-green;
+        $security-hr-color: $security-dev-gray;
+        $security-border-color: $security-dev-gray;
 
     //SIZE
         //text sizes
@@ -66,7 +86,8 @@
 
     //TYPEFACE
         //font-family
-        $page-header-family: $merriweather;
+        $alchemy-page-header-family: $merriweather;
+        $security-page-header-family: $lato;
         $page-header-sub-family: $lato;
         $body-copy-family: $merriweather;
         $item-title-family: $lato;
@@ -77,6 +98,8 @@
         $footer-heading-family: $lato;
 
         //text-transform
+        $alchemy-page-header-transform: none;
+        $security-page-header-transform: uppercase;
         $page-header-sub-transform: uppercase;
         $item-title-transform: uppercase;
         $read-more-transform: uppercase;

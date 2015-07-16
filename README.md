@@ -1,4 +1,4 @@
-#alchemy-ghost v0.1.4
+#alchemy-ghost v0.1.5
 
 **Alchemy is still very much a work in progress, it's not ready for use just yet and definitely doesn't deliver on all of its features yet.**
 
@@ -33,6 +33,8 @@ In the future, I'll explore using the Plugin system or the Ghost API to take car
 ###Configuration
 
 Many of Alchemy's optional features can easily be toggled via changing values in `config/config.js`.
+
+This includes multiple Skins, which change the appearance of the theme.
 
 ###Syntax Highlighting
 

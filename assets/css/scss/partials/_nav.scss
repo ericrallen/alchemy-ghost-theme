@@ -1,10 +1,18 @@
 
     .drawer {
         &-outer {
-            background: $drawer-bg-color;
             position: relative;
             width: 100%;
             overflow: hidden;
+
+            .alchemy &,
+            & {
+                background: $alchemy-drawer-bg-color;
+            }
+
+            .security & {
+                background: $security-drawer-bg-color;
+            }
         }
 
         &-inner {
@@ -15,7 +23,15 @@
             transform: translate3d(0, 0, 0);
             transition: transform 0.5s ease;
             backface-visibility: hidden;
-            background: $body-bg-color;
+
+            .alchemy &,
+            & {
+                background: $alchemy-body-bg-color;
+            }
+
+            .security & {
+                background: $security-body-bg-color;
+            }
 
             .drawer-open & {
                 transform: translate3d(50%, 0, 0);
@@ -50,13 +66,21 @@
         }
 
         a {
-            color: $drawer-link-color;
             text-decoration: none;
             opacity: 0.75;
             font-size: $drawer-link-size;
             font-family: $drawer-link-family;
             text-transform: $drawer-link-transform;
             font-weight: $drawer-link-weight;
+
+            .alchemy &,
+            & {
+                color: $alchemy-drawer-link-color;
+            }
+
+            .security & {
+                color: $security-drawer-link-color;
+            }
 
             &:hover,
             &:focus {
@@ -69,6 +93,26 @@
     .tcon-menu {
         &__lines {
             transform: scale(0.475);
+
+            .alchemy &,
+            & {
+                background: $alchemy-black;
+
+                &:before,
+                &:after {
+                    background: $alchemy-black;
+                }
+            }
+
+            .security &,
+            & {
+                background: $security-white;
+
+                &:before,
+                &:after {
+                    background: $security-white;
+                }
+            }
 
             .tcon-menu--xcross.tcon-transform & {
                 transform: scale(0.475);

@@ -16,7 +16,15 @@
 
     .content-pagination {
         margin: 60px auto;
-        color: $meta-item-color;
         text-transform: lowercase;
         font-size: $meta-item-size;
+
+        .alchemy &,
+        & {
+            color: $alchemy-meta-item-color;
+        }
+
+        .security & {
+            color: $security-meta-item-color;
+        }
     }
