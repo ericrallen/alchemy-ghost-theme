@@ -513,17 +513,19 @@ body {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  font-size: 14px;
   line-height: 1.7;
-  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
   margin: 0;
   font-weight: 400;
 }
 .alchemy body, body {
   color: #293132;
+  font-size: 14px;
+  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
 }
 .security body {
   color: #f9f9fe;
+  font-size: 16px;
+  font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
 }
 
 hr {
@@ -556,6 +558,8 @@ a {
 
 .blog-body {
   padding: 0 5%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .drawer-outer {
@@ -590,6 +594,18 @@ a {
 .drawer-open .drawer-inner {
   -webkit-transform: translate3d(50%, 0, 0);
           transform: translate3d(50%, 0, 0);
+}
+@media (min-width: 768px) {
+  .drawer-open .drawer-inner {
+    -webkit-transform: translate3d(35%, 0, 0);
+            transform: translate3d(35%, 0, 0);
+  }
+}
+@media (min-width: 1040px) {
+  .drawer-open .drawer-inner {
+    -webkit-transform: translate3d(25%, 0, 0);
+            transform: translate3d(25%, 0, 0);
+  }
 }
 
 .blog-nav {
@@ -646,10 +662,10 @@ a {
 .alchemy .tcon-menu__lines:before, .alchemy .tcon-menu__lines:after, .tcon-menu__lines:before, .tcon-menu__lines:after {
   background: #293132;
 }
-.security .tcon-menu__lines, .tcon-menu__lines {
+.security .tcon-menu__lines {
   background: #f9f9fe;
 }
-.security .tcon-menu__lines:before, .security .tcon-menu__lines:after, .tcon-menu__lines:before, .tcon-menu__lines:after {
+.security .tcon-menu__lines:before, .security .tcon-menu__lines:after {
   background: #f9f9fe;
 }
 .tcon-menu--xcross.tcon-transform .tcon-menu__lines {
@@ -657,6 +673,7 @@ a {
           transform: scale(0.475);
 }
 .tcon-menu-text {
+  display: none;
   margin: 0 0 0 -5px;
   font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
   font-size: 15px;
@@ -670,6 +687,11 @@ a {
   font-weight: 700;
   letter-spacing: 2px;
   margin: 0;
+}
+@media (min-width: 960px) {
+  .page-title-main {
+    font-size: 12vw;
+  }
 }
 .alchemy .page-title-main, .page-title-main {
   color: #293132;
@@ -704,15 +726,16 @@ a {
   text-align: right;
   line-height: 1.2;
   font-weight: 300;
-  font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
   letter-spacing: 3px;
   margin: 0;
 }
 .alchemy .page-title-sub, .page-title-sub {
   color: #8e9aaf;
+  font-family: "Lato", "Avenir", "Helvetica", "Arial" sans-serif;
 }
 .security .page-title-sub {
   color: #8e9aaf;
+  font-family: "Merriweather", "Georgia", "Times New Roman", serif;
 }
 
 .blog-intro-description {

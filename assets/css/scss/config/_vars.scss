@@ -42,9 +42,11 @@
 
     //SIZE
         //text sizes
-        $body-copy-size: 14px;
+        $alchemy-body-copy-size: 14px;
+        $security-body-copy-size: 16px;
         $page-header-size: 14vw;
-        $page-header-sub-size: $body-copy-size;
+        $page-header-size-large-screen: 12vw;
+        $page-header-sub-size: $alchemy-body-copy-size;
         $item-title-size: 18px;
         $read-more-link-size: 12px;
         $intro-copy-size: 12px;
@@ -88,8 +90,10 @@
         //font-family
         $alchemy-page-header-family: $merriweather;
         $security-page-header-family: $lato;
-        $page-header-sub-family: $lato;
-        $body-copy-family: $merriweather;
+        $alchemy-page-header-sub-family: $lato;
+        $security-page-header-sub-family: $merriweather;
+        $alchemy-body-copy-family: $merriweather;
+        $security-body-copy-family: $lato;
         $item-title-family: $lato;
         $read-more-family: $lato;
         $meta-item-copy: $merriweather;

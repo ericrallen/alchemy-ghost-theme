@@ -35,6 +35,14 @@
 
             .drawer-open & {
                 transform: translate3d(50%, 0, 0);
+
+                @media (min-width: 768px) {
+                    transform: translate3d(35%, 0, 0);
+                }
+
+                @media (min-width: 1040px) {
+                    transform: translate3d(25%, 0, 0);
+                }
             }
         }
     }
@@ -104,8 +112,7 @@
                 }
             }
 
-            .security &,
-            & {
+            .security & {
                 background: $security-white;
 
                 &:before,
@@ -120,6 +127,7 @@
         }
 
         &-text {
+            display: none;
             margin: 0 0 0 -5px;
             font-family: $menu-btn-family;
             font-size: $menu-btn-size;

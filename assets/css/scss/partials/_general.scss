@@ -16,19 +16,21 @@
         width: 100%;
         height: 100%;
         overflow-y: scroll; //force scroll bar so everything matches up regardless of page length
-        font-size: $body-copy-size;
         line-height: $body-copy-line-height;
-        font-family: $body-copy-family;
         margin: 0;
         font-weight: $body-copy-weight;
 
         .alchemy &,
         & {
             color: $alchemy-body-copy-color;
+            font-size: $alchemy-body-copy-size;
+            font-family: $alchemy-body-copy-family;
         }
 
         .security & {
             color: $security-body-copy-color;
+            font-size: $security-body-copy-size;
+            font-family: $security-body-copy-family;
         }
     }
 
@@ -72,4 +74,6 @@
 
     .blog-body {
         padding: 0 5%;
+        max-width: 1000px;
+        margin: 0 auto;
     }

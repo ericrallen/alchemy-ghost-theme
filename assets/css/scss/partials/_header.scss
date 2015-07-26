@@ -9,6 +9,10 @@
             letter-spacing: $page-header-spacing;
             margin: 0;
 
+            @media (min-width: 960px) {
+                font-size: $page-header-size-large-screen;
+            }
+
             .alchemy &,
             & {
                 color: $alchemy-page-heading-color;
@@ -51,17 +55,18 @@
             text-align: $page-header-sub-align;
             line-height: $page-header-sub-line-height;
             font-weight: $page-header-sub-weight;
-            font-family: $page-header-sub-family;
             letter-spacing: $page-header-sub-spacing;
             margin: 0;
 
             .alchemy &,
             & {
                 color: $alchemy-page-heading-sub-color;
+                font-family: $alchemy-page-header-sub-family;
             }
 
             .security & {
                 color: $security-page-heading-sub-color;
+                font-family: $security-page-header-sub-family;
             }
         }
     }
